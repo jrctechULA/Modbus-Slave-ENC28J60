@@ -150,12 +150,14 @@ void ethernetInit() {
     esp_netif_config_t netif_cfg = ESP_NETIF_DEFAULT_ETH();
     eth_netif = esp_netif_new(&netif_cfg);
 
+    // Uncomment this block to set fixed IP address:
+
     /* esp_netif_dhcpc_stop(eth_netif);
     esp_netif_ip_info_t ip_info;
 
-    esp_netif_str_to_ip4("192.168.1.20", &ip_info.ip);
-    esp_netif_str_to_ip4("192.168.1.10", &ip_info.gw);
-    esp_netif_str_to_ip4("255.255.255.0", &ip_info.netmask);
+    esp_netif_str_to_ip4("192.168.1.20", &ip_info.ip);          //Set IP address
+    esp_netif_str_to_ip4("192.168.1.10", &ip_info.gw);          //Set Gateway
+    esp_netif_str_to_ip4("255.255.255.0", &ip_info.netmask);    //Set Subnet Mask
 
     esp_netif_set_ip_info(eth_netif, &ip_info); */
     
